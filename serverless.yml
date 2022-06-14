@@ -1,0 +1,18 @@
+service: abnd-chkt-service
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 128
+  timeout: 30
+  stage: ${opt:stage, 'staging'}
+  region: ap-south-1
+
+functions:
+  main:
+    handler: index.handler
+    events:
+      - sqs:
+          arn: arn:aws:sqs:ap-south-1:701533118561:abandoned-checkout-queue-test
+          batchSize: 10
+          maximumBatchingWindow: 60
+          functionResponseType: ReportBatchItemFailures
