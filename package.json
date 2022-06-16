@@ -14,11 +14,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-eventbridge": "^3.105.0",
-    "@vendia/serverless-express": "^4.8.2",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1",
     "moment": "^2.29.3",
-    "mongodb": "^4.7.0",
-    "node-fetch": "^2.6.7"
+    "mongodb": "^4.7.0"
   }
 }
